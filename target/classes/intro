@@ -1,0 +1,4 @@
+creating an XPath in console (and finding available elements) (Firefox)
+
+$x("//input[contains(@class, 'btn-style')]")
+$x("//input[@id='name']")

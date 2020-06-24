@@ -8,6 +8,8 @@
 
     <properties>
         <seleniumversion>3.141.59</seleniumversion>
+        <maven.compiler.source>1.11</maven.compiler.source>
+        <maven.compiler.target>1.11</maven.compiler.target>
     </properties>
 
     <dependencies>
