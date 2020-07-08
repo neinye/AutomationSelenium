@@ -10,6 +10,8 @@
         <seleniumversion>3.141.59</seleniumversion>
         <maven.compiler.source>1.11</maven.compiler.source>
         <maven.compiler.target>1.11</maven.compiler.target>
+        <junitversion>4.13</junitversion>
+        <hamcrestversion>1.3</hamcrestversion>
     </properties>
 
     <dependencies>
@@ -32,6 +34,18 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-ie-driver</artifactId>
             <version>${seleniumversion}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junitversion}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <version>${hamcrestversion}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
