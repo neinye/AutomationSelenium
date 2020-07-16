@@ -1,4 +1,4 @@
-package basicweb;
+package junitpack;
 
 import org.junit.*;
 
