@@ -10,9 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class FirefoxProfileClass {
     public static void main(String[] args) {
-        /***
-         * somehow doesn't work, needs review
-         */
+
         WebDriver driver;
         String baseURL = "https://www.google.com/";
 
@@ -21,8 +19,7 @@ public class FirefoxProfileClass {
         FirefoxOptions options = new FirefoxOptions(); //initializing Firefox options
         options.setProfile(ffProfile); //setting profile options for our Firefox Options
 
-        driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver = new FirefoxDriver(options); //ALWAYS REMEMBER TO USE THE OPTIONS WHEN INITIALIZING THE DRIVER!
         driver.manage().window().maximize();
         driver.get(baseURL);
     }
