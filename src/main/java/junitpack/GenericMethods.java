@@ -1,8 +1,11 @@
 package junitpack;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +16,7 @@ public class GenericMethods {
     public GenericMethods(WebDriver driver){
         this.driver = driver;
     }
+    //GETTING ELEMENTS
     public WebElement getElement(String type, String locator){
         type = type.toLowerCase();
         if(type.equals("id")){
@@ -75,5 +79,45 @@ public class GenericMethods {
             return true;
         }else {
             return false;}
+    }
+
+    //WAIT TYPES
+
+//    public static WebElement refreshObject(WebDriver driver, By locator){
+//        int counter = 0;
+//        try{
+//            counter = counter + 1;
+//            return driver.findElement(locator);
+//        }catch(StaleElementReferenceException e){
+//            return refreshObject(driver, locator);
+//        }
+//
+//    }
+    public WebElement waitForElementToBeVisible(WebDriver driver, By locator, int timeout){
+        WebElement element = null;
+        try{
+            System.out.println("Waiting for max: " + timeout + " seconds for element " + locator + " to be available...");
+            WebDriverWait wait = new WebDriverWait(driver, timeout);
+            //refreshObject(driver, locator);
+            element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+            System.out.println("The element " + locator + " has appeared on the webpage");
+        }catch(Exception e){
+            System.out.println("Element " + locator + " did not appear on the webpage");
+        }
+        return element;
+    }
+    public void clickOnElement(WebDriver driver, By locator, int timeout){
+        WebElement element = null;
+        try{
+            System.out.println("Waiting for max: " + timeout + " seconds for element " + locator + " to be clickable...");
+            WebDriverWait wait = new WebDriverWait(driver, timeout);
+            //refreshObject(driver, locator);
+            element = wait.until(ExpectedConditions.elementToBeClickable(locator));
+            System.out.println("The element " + locator + " is clickable on the webpage");
+            element.click();
+            System.out.println("The element " + locator + " has been clicked");
+        }catch(Exception e){
+            System.out.println("Element " + locator + " did not appear/not clickable on the webpage");
+        }
     }
 }

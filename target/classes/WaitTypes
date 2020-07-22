@@ -1,0 +1,30 @@
+~Implicit Wait:
+If elements are not immediately available, an implicit wait tells the Web Driver to poll the DOM for a certain amount of
+time. The default setting is 0. Once set, the implicit wait is set for the duration of the Web Driver object.
+This means that we can tell Selenium WebDriver that we would like to wait for a certain amount of time before throwing
+an exception that it cannot find the element on the page.
+
+~Explicit Wait:
+It is the custom one. It will be used if we want the execution to wait for some time until some condition is achieved.
+An explicit wait is what we can define to wait for a certain condition to occur before proceeding further in the code.
+It is particular to the elements.
+
+~Available expected conditions:
+    alertIsPresent
+    elementSelectionStateToBe
+*   elementToBeClickable *
+    elementToBeSelected
+    frameToBeAvailableAndSwitchToIt
+    invisibilityOfElementLocated
+*   presenceOfElementLocated *
+    textToBePresentInElementLocated
+    textToBePresentInElementValue
+    titleContains
+    titleIs
+*   visibilityOfElementLocated *
+~more -> https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/support/ui/ExpectedConditions.html
+
+~Selenium WebDriver Official webpage -> http://www.seleniumhq.org/docs/04_webdriver_advanced.jsp
+
+WebDriverWait wait = new WebDriverWait(driver, timeout);
+element = wait.until(ExpectedConditions.elementToBeClickable(locator));

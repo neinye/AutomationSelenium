@@ -1,0 +1,6 @@
+What are the different types of waits available in Selenium WebDriver With Java Programming Language?
+    2 types of wait:
+    * implicit wait
+    * explicit wait
+
+What is the difference between implicit wait and explicit wait?
