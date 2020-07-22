@@ -22,18 +22,18 @@ public class ExplicitWaitWithUtility {
 
     @Before
     public void setUp() throws Exception {
-        gm = new GenericMethods(driver);
         baseURL = "https://sso.teachable.com/secure/42299/users/sign_in";
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        gm = new GenericMethods(driver);
     }
 
     @Test
     public void explicitWaitTest() throws Exception {
         driver.get(baseURL);
-        WebElement mailAddress = gm.waitForElementToBeVisible(driver, By.xpath("//input[@id=\"user_email\"]"), 3);
+        WebElement mailAddress = gm.waitForElementToBeVisible(By.xpath("//input[@id=\"user_email\"]"), 3);
         mailAddress.sendKeys("test");
-        WebElement passwd = gm.waitForElementToBeVisible(driver, By.id("user_password"), 3);
+        WebElement passwd = gm.waitForElementToBeVisible(By.id("user_password"), 3);
         passwd.sendKeys("password");
         gm.clickOnElement(driver, By.xpath("//input[@value=\"Log In\"]"), 3);
 

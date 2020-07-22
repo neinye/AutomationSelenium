@@ -93,7 +93,7 @@ public class GenericMethods {
 //        }
 //
 //    }
-    public WebElement waitForElementToBeVisible(WebDriver driver, By locator, int timeout){
+    public WebElement waitForElementToBeVisible(By locator, int timeout){
         WebElement element = null;
         try{
             System.out.println("Waiting for max: " + timeout + " seconds for element " + locator + " to be available...");
