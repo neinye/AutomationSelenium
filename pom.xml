@@ -12,9 +12,16 @@
         <maven.compiler.target>1.11</maven.compiler.target>
         <junitversion>4.13</junitversion>
         <hamcrestversion>1.3</hamcrestversion>
+        <commonsioversion>2.6</commonsioversion>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commonsioversion}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
