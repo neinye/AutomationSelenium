@@ -10,7 +10,7 @@
         <seleniumversion>3.141.59</seleniumversion>
         <maven.compiler.source>1.11</maven.compiler.source>
         <maven.compiler.target>1.11</maven.compiler.target>
-        <junitversion>4.13</junitversion>
+        <junitversion>4.13.1</junitversion>
         <hamcrestversion>1.3</hamcrestversion>
         <commonsioversion>2.6</commonsioversion>
     </properties>
